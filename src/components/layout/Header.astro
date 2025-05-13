@@ -12,6 +12,11 @@ const links = [
   },
   {
     ref: '03',
+    name: 'Showcase',
+    href: '/showcase',
+  },
+  {
+    ref: '04',
     name: 'Contact',
     href: '/contact',
   },
@@ -32,17 +37,28 @@ const links = [
         href="/"
         class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
       >
-        <span class="sr-only">Stone</span>
-        <p class="text-2xl font-medium tracking-tight sm:text-5xl lg:text-2xl"> fireHouse.labs</p>
-        <!--
+        <span class="sr-only">fireHouse.labs</span>
         <img
-          class="h-8 w-auto"
-          width="65"
-          height="40"
-          :src="$store.theme.isDark ? '/assets/logo-inverted.svg' : '/assets/logo.svg'"
-          alt="Stone"
+          x-cloak
+          class="h-14 w-auto sm:h-20 lg:h-24"
+          :class="{ 'hidden': !($store.theme.isDark) }"
+          src="/assets/fhl_logo_dark.png"
+          alt="fireHouse.labs"
+          width="200"
+          height="120"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='none';this.nextElementSibling.nextElementSibling.style.display='block'"
         />
-        -->
+        <img
+          x-cloak
+          class="h-14 w-auto sm:h-20 lg:h-24"
+          :class="{ 'hidden': $store.theme.isDark }"
+          src="/assets/fhl_logo_light.png"
+          alt="fireHouse.labs"
+          width="200"
+          height="120"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+        />
+        <p class="hidden text-2xl font-medium tracking-tight sm:text-5xl lg:text-2xl">fireHouse.labs</p>
       </a>
     </div>
 

@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectModal from '../components/showcase/ProjectModal.astro';
+import { getCollection } from 'astro:content';
+import { marked } from 'marked';
+
+// Configure marked
+const renderer = new marked.Renderer();
+marked.setOptions({
+  gfm: true,
+  breaks: true
+});
+
+const projects = await getCollection('showcase');
+---
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const id = (e.currentTarget as HTMLElement).dataset.projectId;
+        if (id) {
+          const cleanId = id.replace(/^showcase\//, '').replace(/\.md$/, '');
+          console.log('Opening modal for project:', cleanId);
+          window.dispatchEvent(
+            new CustomEvent('project-modal-open', {
+              detail: { id: cleanId }
+            })
+          );
+        }
+      });
+    });
+  });
+</script>
+
+<Layout
+  title="Showcase | fireHouse.labs"
+  description="Explore our showcase of successful projects and solutions delivered by fireHouse.labs"
+>
+  <main class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-primary-950 dark:text-primary-200 sm:text-6xl">
+          Our Work
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-primary-950/70 dark:text-primary-200/70">
+          Discover some of our recent projects and solutions.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        {
+          projects.map((project) => (
+            <article
+              class="flex flex-col items-start cursor-pointer hover:opacity-90 transition-opacity project-card"
+              data-project-id={project.id.replace(/\.md$/, '')}
+            >
+              <div class="w-full">
+                <img
+                  class="aspect-[16/9] w-full rounded-2xl object-cover"
+                  src={project.data.image}
+                  alt={project.data.title}
+                />
+              </div>
+              <div class="max-w-xl">
+                <div class="mt-8">
+                <span class="text-xs text-primary-950/70 dark:text-primary-200/70">{project.data.client}</span>
+              </div>
+                <div class="group relative">
+                  <h3 class="mt-3 text-lg font-semibold leading-6 text-primary-950 dark:text-primary-200">
+                    {project.data.title}
+                  </h3>
+                  <p class="mt-5 line-clamp-3 text-sm leading-6 text-primary-950/70 dark:text-primary-200/70">
+                    {project.data.description}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+
+  {
+    projects.map((project) => (
+      <ProjectModal id={project.id.replace(/\.md$/, '')}>
+          <div class="prose dark:prose-invert max-w-none prose-headings:text-primary-950 dark:prose-headings:text-primary-200 prose-p:text-primary-950/70 dark:prose-p:text-primary-200/70 prose-li:text-primary-950/70 dark:prose-li:text-primary-200/70">
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold text-primary-950 dark:text-primary-200">{project.data.title}</h2>
+            <p class="text-sm text-primary-950/70 dark:text-primary-200/70">{project.data.client}</p>
+          </div>
+          <img
+            class="w-full rounded-lg object-cover mb-8"
+            src={project.data.image}
+            alt={project.data.title}
+          />
+          <div set:html={marked.parse(project.body)} />
+        </div>
+      </ProjectModal>
+    ))
+  }
+</Layout>
