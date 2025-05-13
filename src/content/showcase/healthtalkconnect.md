@@ -2,19 +2,22 @@
 title: "HealthTalk Connect App"
 client: "La Trobe University & Epworth Hospital"
 date: "2025-01-15"
-image: "/assets/about_image.jpeg"
+image: "/assets/aphasia.png"
 description: "The HealthTalk Connect app accompanies stroke and aphasia patients throughout transitions in their healthcare aiming to close potential communication gaps and improve patient safety and satisfaction."
 ---
 
-# Custom ERP Integration for TechCorp Industries
+# Technology supported rehabilitation
 
-Our team successfully integrated TechCorp's legacy ERP systems with modern cloud infrastructure, creating a seamless flow of information across their entire operation. The project involved complex data migration, custom API development, and implementation of automated workflows.
+Aphasia affects how safe patients are in hospital and how they communicate with their healthcare teams. Stroke patients with aphasia are more likely to experience preventable adverse events while in hospital. Technology offers a solution. We collaborated with individuals with aphasia, their family and healthcare workers to develop the Aphasia App:  a new mHealth intervention tailored to support effective healthcare communication.
 
-## Key Achievements
+The app accompanies the patient throughout transitions in their healthcare aiming to close potential communication gaps and improve patient safety and satisfaction.
 
-- Reduced manual data entry by 75%
-- Improved system response time by 60%
-- Implemented real-time synchronization between systems
-- Created custom dashboards for operational insights
+The usability of the beta version are currently being tested in an observational study with stroke patients and staff  in acute and rehabilitation wards. The next step is a  study of its effect on healthcare communication under controlled conditions.
 
-The solution continues to serve as the backbone of TechCorp's digital transformation journey, enabling them to scale operations efficiently while maintaining data integrity across all systems.
+Project aims
+To discover facilitators and barriers to implementation of the Aphasia App in acute stroke and rehabilitation settings and to determine its effects on healthcare communication.
+
+## Technologies Used
+
+- Flutter (iOS and Android Apps)
+- FireBase (Object storage and database)

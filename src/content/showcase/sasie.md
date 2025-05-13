@@ -1,9 +1,9 @@
 ---
-title: "Custom ERP Integration"
-client: "TechCorp Industries"
+title: "SASIE"
+client: "fireHouse Labs"
 date: "2025-01-15"
 image: "/assets/about_image.jpeg"
-description: "Developed a seamless integration between legacy ERP systems and modern cloud infrastructure, improving operational efficiency by 40%. The solution included real-time data synchronization, custom API development, and automated workflow processes."
+description: "SASIE transforms the Supplementary Alerting Service (SAS) turnout dashboard into a multi-function general information display board, incorporating custom messages, upcoming events and weather data."
 ---
 
 # Custom ERP Integration for TechCorp Industries

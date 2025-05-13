@@ -1,8 +1,8 @@
 ---
-title: "Analytics Dashboard Platform"
-client: "DataViz Solutions"
+title: "TimePals"
+client: "fireHouse Labs"
 date: "2025-03-20"
-image: "/assets/cta_image.jpeg"
+image: "/assets/timepals.png"
 description: "Built a comprehensive analytics dashboard platform that transforms complex data into actionable insights. Features include real-time data visualization, customizable widgets, and automated reporting capabilities."
 ---
 
