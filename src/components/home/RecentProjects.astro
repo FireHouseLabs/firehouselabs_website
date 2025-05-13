@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("showcase");
+const recentProjects = allProjects
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col items-center gap-8 sm:gap-10">
+      <div class="flex max-w-xl flex-col items-center gap-4 sm:gap-6">
+        <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Recent Projects</h2>
+        <p class="text-center text-lg text-primary-950/70 dark:text-primary-200/70">
+          Explore our latest work and innovations
+        </p>
+      </div>
+      <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          recentProjects.map((project) => (
+            <div class="flex flex-col gap-4 rounded-3xl bg-primary-500/10 px-6 py-8 dark:bg-primary-400/10">
+              <img
+                src={project.data.image}
+                alt={project.data.title}
+                class="h-48 w-full object-cover rounded-xl"
+              />
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-medium">{project.data.title}</h3>
+                <p class="text-base text-primary-950/70 dark:text-primary-200/70 line-clamp-3">
+                  {project.data.description}
+                </p>
+              </div>
+              <a
+                href={`/showcase#${project.slug}`}
+                class="inline-flex items-center justify-center mt-auto text-base font-medium text-primary-950 dark:text-primary-200 hover:underline"
+              >
+                Learn more
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
