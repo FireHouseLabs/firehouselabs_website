@@ -8,7 +8,7 @@ description: "BrigadeBook is an online asset booking tool that enables brigades 
 
 # Infrastructure and Asset Booking App
 
-We developed a state-of-the-art analytics dashboard platform that enables DataViz Solutions to provide their clients with powerful data visualization and analysis tools. The platform handles large datasets efficiently while maintaining a responsive and intuitive user interface.
+BrigadeBook streamlines the management of shared brigade assets through an efficient digital booking system. The platform addresses the complexities of resource scheduling and allocation across multiple brigades, incorporating a comprehensive approval workflow to ensure proper oversight of shared resources.
 
 ## Key Features
 

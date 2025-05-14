@@ -17,6 +17,15 @@ The usability of the beta version are currently being tested in an observational
 Project aims
 To discover facilitators and barriers to implementation of the Aphasia App in acute stroke and rehabilitation settings and to determine its effects on healthcare communication.
 
+## Key Features
+
+- Content database with common images and text.
+- Full lazy text search.
+- Drawing tool.
+- Freeform writing tool.
+- Patient communication strategies.
+- Patient information including pain, feeling and emotional scales.
+
 ## Technologies Used
 
 - Flutter (iOS and Android Apps)

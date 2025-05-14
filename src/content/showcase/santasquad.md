@@ -2,19 +2,27 @@
 title: "Santa Squad"
 client: "fireHouse Labs"
 date: "2025-01-15"
-image: "/assets/about_image.jpeg"
-description: "StationOne empowers firefighters by providing them with a digital platform that enhances their efficiency, safety, organisation, and access to information."
+image: "/assets/santasquad.jpg"
+description: "SantaSquad is uniquely designed for emergency services to manage their Christmas 'Santa Runs'. Offering Santa tracking, route planning and delivery point management in a single platform."
 ---
 
-# Custom ERP Integration for TechCorp Industries
+# Built from experience
 
-Our team successfully integrated TechCorp's legacy ERP systems with modern cloud infrastructure, creating a seamless flow of information across their entire operation. The project involved complex data migration, custom API development, and implementation of automated workflows.
+SantaSquad was created by emergency services volunteers who understand the unique challenges of organizing Santa Runs. Our platform addresses real needs with practical solutions.
 
-## Key Achievements
+Santa Squad is engineered to be highly available and resilient during peak operations the application receives over 8,000 views per hour with in-excess of 10,000 API requests for location tracking data per hour.
 
-- Reduced manual data entry by 75%
-- Improved system response time by 60%
-- Implemented real-time synchronization between systems
-- Created custom dashboards for operational insights
+The application is deployed to be fully redundant, with extensive monitoring to identify any platform faults.
 
-The solution continues to serve as the backbone of TechCorp's digital transformation journey, enabling them to scale operations efficiently while maintaining data integrity across all systems.
+## Key Features
+
+- Real time tracking of 'Santa' from native mobile apps.
+- Route planning.
+- Crew Management.
+- Public present registration and delivery route planning.
+
+## Technology used
+
+- Ruby on Rails
+- PostgreSQL with PostGIS for Location Data
+- Flutter (iOS and Android Native Apps)

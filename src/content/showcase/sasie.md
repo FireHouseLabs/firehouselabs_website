@@ -2,19 +2,18 @@
 title: "SASIE"
 client: "fireHouse Labs"
 date: "2025-01-15"
-image: "/assets/about_image.jpeg"
+image: "/assets/events.png"
 description: "SASIE transforms the Supplementary Alerting Service (SAS) turnout dashboard into a multi-function general information display board, incorporating custom messages, upcoming events and weather data."
 ---
 
-# Custom ERP Integration for TechCorp Industries
+# Extending functionality of response-critical application
 
-Our team successfully integrated TechCorp's legacy ERP systems with modern cloud infrastructure, creating a seamless flow of information across their entire operation. The project involved complex data migration, custom API development, and implementation of automated workflows.
+The SAS Turnout screen is designed to provide brigades with information for emergency events. The remainder of time, the dashboard is ineffective and often shows no information. SASIE adds additional elements to the SAS turnout screen including upcoming brigade events, news, weather and time.
 
-## Key Achievements
+SAS is often displayed via a browser, which requires refresh timers and various other tooling to ensure the dashboard remains on display. All these features are now built into a single application.
 
-- Reduced manual data entry by 75%
-- Improved system response time by 60%
-- Implemented real-time synchronization between systems
-- Created custom dashboards for operational insights
+The SASIE app is cross platform and designed to run on Windows, Mac and Linux.
 
-The solution continues to serve as the backbone of TechCorp's digital transformation journey, enabling them to scale operations efficiently while maintaining data integrity across all systems.
+## Technologies used
+
+- ElectronJS

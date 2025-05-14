@@ -2,18 +2,36 @@
 const services = [
   {
     step: '01',
+    name: 'Web App Development',
+    description:
+      'We create robust, scalable web applications that streamline your operations. Our solutions are built with modern technologies, ensuring responsive design, optimal performance, and seamless user experience.',
+  },
+  {
+    step: '02',
+    name: 'Mobile App Development',
+    description:
+      'From native iOS and Android apps to cross-platform solutions, we develop mobile applications that keep your team connected and productive in the field, with offline capabilities and real-time synchronization.',
+  },
+  {
+    step: '03',
+    name: 'AI Integration',
+    description:
+      'Enhance your operations with cutting-edge AI solutions. We implement intelligent features like predictive analytics, natural language processing, and machine learning to optimize decision-making and automate complex tasks.',
+  },
+  {
+    step: '04',
     name: 'Strategy & Analysis',
     description:
       'Specialized in emergency services workflows, we analyze your current processes, identify bottlenecks, and create a strategic roadmap for digital transformation that enhances operational efficiency.',
   },
   {
-    step: '02',
-    name: 'Custom Development',
+    step: '05',
+    name: 'Integration',
     description:
-      'We build mission-critical software solutions that streamline complex workflows, focusing on reliability, real-time performance, and seamless integration with your existing systems.',
+      'We seamlessly connect your systems with various data sources, data lakes, and third-party platforms. Our integration solutions handle complex data processing, transformation, and synchronization while maintaining data integrity and security.',
   },
   {
-    step: '03',
+    step: '06',
     name: '24/7 Support',
     description:
       'For mission-critical systems, continuous support is essential. We provide round-the-clock monitoring, rapid response times, and proactive maintenance to ensure your operations never skip a beat.',
@@ -24,8 +42,8 @@ const services = [
 <section class="py-16 sm:py-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="flex flex-col gap-12 sm:gap-16">
-      <h2 id="services" class="text-3xl font-medium tracking-tight sm:text-4xl">How We Deliver Excellence</h2>
-      <div class="grid gap-8 lg:grid-cols-3">
+      <h2 id="services" class="text-3xl font-medium tracking-tight sm:text-4xl">Technology Solutions & Capabilities</h2>
+      <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
         {
           services.map((service) => (
             <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
