@@ -11,7 +11,7 @@ interface Props {
   title: string;
 }
 
-const { description, title } = Astro.props;
+const { description, title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -88,7 +88,7 @@ const { description, title } = Astro.props;
       Alpine.plugin(collapse);
 
       Alpine.store('theme', {
-        init() {
+        init(this: { isDark: boolean }) {
           this.isDark = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
               return localStorage.getItem('theme') === 'dark';
@@ -102,11 +102,17 @@ const { description, title } = Astro.props;
 
         isDark: false,
 
-        toggle() {
+        toggle(this: { isDark: boolean }) {
           this.isDark = !this.isDark;
           localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
         },
-      });
+      } as { isDark: boolean });
+
+      declare global {
+        interface Window {
+          Alpine: typeof Alpine;
+        }
+      }
 
       window.Alpine = Alpine;
       Alpine.start();
