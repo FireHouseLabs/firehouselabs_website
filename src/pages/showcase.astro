@@ -16,18 +16,29 @@ const projects = await getCollection('showcase');
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        const id = (e.currentTarget as HTMLElement).dataset.projectId;
-        if (id) {
-          const cleanId = id.replace(/^showcase\//, '').replace(/\.md$/, '');
-          console.log('Opening modal for project:', cleanId);
-          window.dispatchEvent(
-            new CustomEvent('project-modal-open', {
-              detail: { id: cleanId }
-            })
-          );
+    const modals = document.querySelectorAll('[data-modal-id]');
+    const modalTriggers = document.querySelectorAll('[data-open-modal]');
+
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const modalId = trigger.getAttribute('data-open-modal');
+        const modal = document.querySelector(`[data-modal-id="${modalId}"]`) as HTMLElement | null;
+        if (modal) {
+          if (modal instanceof HTMLElement) {
+            modal.style.display = 'block';
+          }
+          modal.setAttribute('aria-hidden', 'false');
         }
+      });
+    });
+
+    modals.forEach(modal => {
+      const closeButton = modal?.querySelector('[data-close-modal]') as HTMLElement | null;
+      closeButton?.addEventListener('click', () => {
+        if (modal instanceof HTMLElement) {
+          modal.style.display = 'none';
+        }
+        modal.setAttribute('aria-hidden', 'true');
       });
     });
   });
@@ -51,8 +62,8 @@ const projects = await getCollection('showcase');
         {
           projects.map((project) => (
             <article
-              class="flex flex-col items-start cursor-pointer hover:opacity-90 transition-opacity project-card"
-              data-project-id={project.id.replace(/\.md$/, '')}
+              class="flex flex-col items-start cursor-pointer hover:opacity-90 transition-opacity"
+              data-open-modal={project.id.replace(/\.md$/, '')}
             >
               <div class="w-full">
                 <img
@@ -83,7 +94,7 @@ const projects = await getCollection('showcase');
 
   {
     projects.map((project) => (
-      <ProjectModal id={project.id.replace(/\.md$/, '')}>
+      <ProjectModal id={project.id.replace(/\.md$/, '')} data-modal-id={project.id.replace(/\.md$/, '')}>
           <div class="prose dark:prose-invert max-w-none prose-headings:text-primary-950 dark:prose-headings:text-primary-200 prose-p:text-primary-950/70 dark:prose-p:text-primary-200/70 prose-li:text-primary-950/70 dark:prose-li:text-primary-200/70">
           <div class="mb-6">
             <h2 class="text-2xl font-bold text-primary-950 dark:text-primary-200">{project.data.title}</h2>
