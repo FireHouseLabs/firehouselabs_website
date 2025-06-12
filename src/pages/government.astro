@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const description = "Custom software solutions for emergency services and government teams - secure, scalable platforms built for operational reality.";
+const title = "Government & Emergency Services";
+---
+
+<Layout description={description} title={title}>
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="flex flex-col gap-16">
+        <!-- Hero -->
+        <div class="flex flex-col gap-8 sm:gap-10">
+          <div class="flex flex-col gap-4 sm:gap-6">
+            <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+              Custom Software for Emergency Services and Government Teams
+            </h1>
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-lg sm:text-xl">
+              We build operational tools for brigades, councils, and public agencies that need software to match the way they work.
+            </p>
+          </div>
+        </div>
+
+        <!-- Built for Your World -->
+        <div class="flex flex-col gap-8 sm:gap-10">
+          <div class="flex flex-col gap-4 sm:gap-6">
+            <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+              Built for Your World
+            </h2>
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-lg sm:text-xl">
+              From local brigades to regional coordination, we understand the challenges of managing assets, crews, and compliance under pressure. We design tools that are secure, scalable, and built to support your operational reality.
+            </p>
+          </div>
+        </div>
+
+        <!-- What We Offer -->
+        <div class="flex flex-col gap-8 sm:gap-10">
+          <div class="flex flex-col gap-4 sm:gap-6">
+            <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+              What We Offer
+            </h2>
+            <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <li class="flex flex-col gap-4 rounded-3xl bg-primary-500/10 dark:bg-primary-400/10 px-6 py-8">
+                <p class="text-xl font-medium">Custom platforms for incident, asset, or resource tracking</p>
+              </li>
+              <li class="flex flex-col gap-4 rounded-3xl bg-primary-500/10 dark:bg-primary-400/10 px-6 py-8">
+                <p class="text-xl font-medium">Internal portals for compliance, SOPs, or team coordination</p>
+              </li>
+              <li class="flex flex-col gap-4 rounded-3xl bg-primary-500/10 dark:bg-primary-400/10 px-6 py-8">
+                <p class="text-xl font-medium">Digital transformation for legacy or paper-based systems</p>
+              </li>
+              <li class="flex flex-col gap-4 rounded-3xl bg-primary-500/10 dark:bg-primary-400/10 px-6 py-8">
+                <p class="text-xl font-medium">Integrations with existing tools or CRMs</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Case Study -->
+        <div class="flex flex-col gap-8 sm:gap-10 bg-primary-500/10 dark:bg-primary-400/10 rounded-3xl px-6 py-8">
+          <div class="flex flex-col gap-4 sm:gap-6">
+            <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+              Case Study: StationOne
+            </h2>
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-lg sm:text-xl">
+              Built to serve emergency services across Australia, StationOne brings together personnel, assets, and workflows in a secure platform tailored to real-world brigade structures.
+            </p>
+            <a
+              href="/case-studies/stationone"
+              class="text-lg font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+            >
+              Learn More →
+            </a>
+          </div>
+        </div>
+
+        <!-- Why Firehouse Labs -->
+        <div class="flex flex-col gap-8 sm:gap-10">
+          <div class="flex flex-col gap-4 sm:gap-6">
+            <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">
+              Why Firehouse Labs?
+            </h2>
+            <ul class="grid gap-4 text-lg">
+              <li class="flex items-center gap-2">
+                <span class="text-xl">✅</span>
+                Experience with government procurement cycles
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-xl">✅</span>
+                Focus on operational reliability & hierarchy
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-xl">✅</span>
+                Built-in permissions, auditing, and offline-first workflows
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-xl">✅</span>
+                Based in Australia and ready to support your rollout
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-col gap-8 sm:gap-10">
+          <div class="flex flex-col items-center gap-4 sm:gap-6 rounded-3xl bg-primary-500/10 dark:bg-primary-400/10 px-6 py-8">
+            <div class="flex gap-4">
+              <a
+                href="/contact"
+                class="bg-primary-600 hover:bg-primary-700 focus-visible:outline-primary-600 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              >
+                📅 Schedule a Call
+              </a>
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center rounded-full border-2 border-primary-600 px-5 py-3 text-base font-medium text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+              >
+                ✉️ Get in Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
