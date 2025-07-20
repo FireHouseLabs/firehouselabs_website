@@ -67,12 +67,22 @@ const { description, title } = Astro.props as Props;
     <script src="https://unpkg.com/@botpoison/browser" async></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y82PCFDRJB"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-Y82PCFDRJB');
+
+      // Track page views during client-side navigation with ViewTransitions
+      document.addEventListener('astro:page-load', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('config', 'G-Y82PCFDRJB', {
+            page_location: window.location.href,
+            page_title: document.title
+          });
+        }
+      });
     </script>
     <title>{title}</title>
     <ViewTransitions />
