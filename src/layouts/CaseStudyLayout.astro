@@ -57,6 +57,7 @@ const { frontmatter } = Astro.props;
         <div class="flex justify-center">
           <a
             href="/contact"
+            @click="gtag('event', 'contact_button_click', { 'button_location': 'case_study_layout', 'button_text': 'Discuss Your Project' })"
             class="bg-primary-600 hover:bg-primary-700 focus-visible:outline-primary-600 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             Discuss Your Project

@@ -7,7 +7,32 @@
           We'd love to learn more about you and what we can build together.
         </p>
       </div>
-      <form action="https://submit-form.com/g2loVdYi9" data-botpoison-public-key="pk_23c283b4-3034-48f0-bc86-1206b236df71" method="POST" class="mt-3 flex flex-col gap-y-6">
+      <form 
+        action="https://submit-form.com/g2loVdYi9" 
+        data-botpoison-public-key="pk_23c283b4-3034-48f0-bc86-1206b236df71" 
+        method="POST" 
+        class="mt-3 flex flex-col gap-y-6"
+        x-data="{
+          formStarted: false,
+          formSubmitted: false,
+          formData: { fullName: '', email: '', message: '' },
+          trackFormStart() {
+            if (!this.formStarted) {
+              this.formStarted = true;
+              gtag('event', 'form_start', { 'form_name': 'contact_form' });
+            }
+          },
+          getCompletedFieldsCount() {
+            let count = 0;
+            if (this.formData.fullName.trim()) count++;
+            if (this.formData.email.trim()) count++;
+            if (this.formData.message.trim()) count++;
+            return count;
+          }
+        }"
+        @submit="formSubmitted = true; gtag('event', 'form_submit', { 'form_name': 'contact_form' });"
+        @beforeunload.window="if (formStarted && !formSubmitted && getCompletedFieldsCount() > 0) { gtag('event', 'form_abandon', { 'form_name': 'contact_form', 'fields_completed': getCompletedFieldsCount() }); }"
+      >
         <!-- Full name input -->
         <div>
           <label for="full-name" class="sr-only">Full name</label>
@@ -16,6 +41,8 @@
             name="full-name"
             id="full-name"
             autocomplete="name"
+            x-model="formData.fullName"
+            @focus="trackFormStart()"
             class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
             placeholder="Full name"
           />
@@ -29,6 +56,8 @@
             name="email"
             id="email"
             autocomplete="email"
+            x-model="formData.email"
+            @focus="trackFormStart()"
             class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
             placeholder="Email"
           />
@@ -41,6 +70,8 @@
             name="message"
             id="message"
             rows="3"
+            x-model="formData.message"
+            @focus="trackFormStart()"
             class="hover:ring-primary-600 focus:ring-primary-600 dark:hover:ring-primary-400 dark:focus:ring-primary-400 bg-primary-50 dark:bg-primary-950 ring-primary-900/40 dark:ring-primary-200/40 placeholder:text-primary-950/60 dark:placeholder:text-primary-200/60 block w-full appearance-none rounded-md border-0 px-4 py-4 text-base ring-1 transition focus:outline-none focus:ring-2"
             placeholder="Message"></textarea>
         </div>
