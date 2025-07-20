@@ -33,6 +33,7 @@ const recentProjects = allProjects
               </div>
               <a
                 href={`/showcase#${project.id.replace(/\.md$/, '')}`}
+                @click={`gtag('event', 'project_click', { 'project_name': '${project.id.replace(/\.md$/, '')}', 'project_type': 'showcase', 'click_location': 'home_recent_projects', 'click_element': 'learn_more_link' })`}
                 class="inline-flex items-center justify-center mt-auto text-base font-medium text-primary-950 dark:text-primary-200 hover:underline"
               >
                 Learn more
@@ -44,6 +45,7 @@ const recentProjects = allProjects
       <div class="flex justify-center mt-8">
         <a
           href="/showcase"
+          @click="gtag('event', 'navigation_click', { 'link_text': 'View All Projects', 'click_location': 'home_recent_projects', 'destination': 'showcase_page' })"
           class="inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:focus:ring-offset-primary-900 transition-colors"
         >
           View All Projects

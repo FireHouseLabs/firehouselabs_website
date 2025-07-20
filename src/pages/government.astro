@@ -76,6 +76,7 @@ const title = "Government & Emergency Services";
                 </p>
                 <a
                   href="/case-studies/stationone"
+                  @click="gtag('event', 'project_click', { 'project_name': 'stationone', 'project_type': 'case_study', 'click_location': 'government_page', 'click_element': 'case_study_link' })"
                   class="text-lg font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
                 >
                   Learn More →
@@ -94,6 +95,7 @@ const title = "Government & Emergency Services";
                 </p>
                 <a
                   href="/case-studies/aarlink"
+                  @click="gtag('event', 'project_click', { 'project_name': 'aarlink', 'project_type': 'case_study', 'click_location': 'government_page', 'click_element': 'case_study_link' })"
                   class="text-lg font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
                 >
                   Learn More →

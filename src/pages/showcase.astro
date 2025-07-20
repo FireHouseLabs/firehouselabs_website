@@ -75,6 +75,7 @@ const projects = await getCollection('showcase');
             <article
               class="flex flex-col items-start cursor-pointer hover:opacity-90 transition-opacity"
               data-open-modal={project.id.replace(/\.md$/, '')}
+              @click={`gtag('event', 'project_click', { 'project_name': '${project.id.replace(/\.md$/, '')}', 'project_type': 'showcase', 'click_location': 'showcase_page', 'click_element': 'project_card' })`}
             >
               <div class="w-full">
                 <img

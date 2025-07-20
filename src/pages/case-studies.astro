@@ -79,6 +79,7 @@ const sortedCaseStudies = caseStudies.sort((a, b) =>
                 <div class="pt-4">
                   <a 
                     href={`/case-studies/${study.slug}`}
+                    @click={`gtag('event', 'project_click', { 'project_name': '${study.slug}', 'project_type': 'case_study', 'click_location': 'case_studies_page', 'click_element': 'read_case_study_link' })`}
                     class="text-primary-600 dark:text-primary-400 hover:text-primary-500 dark:hover:text-primary-300 inline-flex items-center gap-2 text-sm font-medium transition-colors group/link"
                   >
                     Read full case study
