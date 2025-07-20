@@ -65,6 +65,15 @@ const { description, title } = Astro.props as Props;
     />
     <meta charset="utf-8" />
     <script src="https://unpkg.com/@botpoison/browser" async></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y82PCFDRJB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y82PCFDRJB');
+    </script>
     <title>{title}</title>
     <ViewTransitions />
   </head>
