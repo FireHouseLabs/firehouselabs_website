@@ -1,21 +1,33 @@
 ---
 title: "TimePals"
 client: "fireHouse Labs"
-date: "2025-03-20"
+date: "2025-01-15"
 image: "/assets/timepals.png"
-description: "Built a comprehensive analytics dashboard platform that transforms complex data into actionable insights. Features include real-time data visualization, customizable widgets, and automated reporting capabilities."
+description: "A visual scheduling application designed to help children with autism and other developmental needs understand and follow daily routines through interactive timers and color-coded activities."
 ---
 
-# Analytics Dashboard Platform for DataViz Solutions
+# Supporting children's time management and routine understanding
 
-We developed a state-of-the-art analytics dashboard platform that enables DataViz Solutions to provide their clients with powerful data visualization and analysis tools. The platform handles large datasets efficiently while maintaining a responsive and intuitive user interface.
+TimePals was developed to address the specific needs of children with autism spectrum disorder and other developmental challenges who struggle with time comprehension and task management. Created initially for a daughter with autism level 2, the application transforms abstract concepts of time into visual, interactive experiences.
+
+The platform helps children build independence and confidence in managing their daily activities through structured visual scheduling and real-time feedback.
 
 ## Key Features
 
-- Real-time data visualization
-- Customizable dashboard widgets
-- Automated report generation
-- Advanced filtering and data exploration tools
-- Multi-tenant architecture
+- **Visual Schedules**: Color-coded activities with intuitive icons for easy recognition
+- **Interactive Timers**: Visual countdown displays showing activity start and end times
+- **Schedule Creation**: Flexible tools for building personalized daily routines
+- **Template System**: Save and reuse successful schedule formats
+- **Cross-Platform Access**: Works seamlessly across devices
+- **Offline Functionality**: Ensures schedules remain accessible anywhere
 
-The platform has become DataViz Solutions' flagship product, serving hundreds of enterprise clients and processing millions of data points daily.
+## Impact and Research Potential
+
+TimePals has garnered significant interest from child psychologists working in autism research, with investigations underway to incorporate the application into formal medical research studies. The app's approach to visualizing time and routine management shows promise for supporting therapeutic interventions and improving quality of life for neurodivergent children.
+
+## Technology Used
+
+- Web-based application with JavaScript frameworks
+- Stimulus controllers for interactive elements
+- Cross-platform compatibility
+- Asset management for enhanced user experience

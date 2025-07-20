@@ -15,7 +15,7 @@ const projects = await getCollection('showcase');
 ---
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initializeModals() {
     const modals = document.querySelectorAll('[data-modal-id]');
     const modalTriggers = document.querySelectorAll('[data-open-modal]');
 
@@ -26,6 +26,10 @@ const projects = await getCollection('showcase');
         if (modal) {
           if (modal instanceof HTMLElement) {
             modal.style.display = 'block';
+            const backdrop = modal.querySelector('.fixed.inset-0.bg-gray-500\\/75') as HTMLElement | null;
+            if (backdrop) {
+              backdrop.style.display = 'block';
+            }
           }
           modal.setAttribute('aria-hidden', 'false');
         }
@@ -37,11 +41,18 @@ const projects = await getCollection('showcase');
       closeButton?.addEventListener('click', () => {
         if (modal instanceof HTMLElement) {
           modal.style.display = 'none';
+          const backdrop = modal.querySelector('.fixed.inset-0.bg-gray-500\\/75') as HTMLElement | null;
+          if (backdrop) {
+            backdrop.style.display = 'none';
+          }
         }
         modal.setAttribute('aria-hidden', 'true');
       });
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeModals);
+  document.addEventListener('astro:page-load', initializeModals);
 </script>
 
 <Layout
@@ -105,7 +116,7 @@ const projects = await getCollection('showcase');
             src={project.data.image}
             alt={project.data.title}
           />
-          <div set:html={marked.parse(project.body)} />
+          <div set:html={marked.parse(project.body || '')} />
         </div>
       </ProjectModal>
     ))
