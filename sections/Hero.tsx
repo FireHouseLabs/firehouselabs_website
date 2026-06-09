@@ -51,12 +51,12 @@ const Hero: React.FC = () => {
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tighter mb-8 max-w-4xl">
               Transforming <br />
-              <span className="gradient-text">Visions</span> into <br />
+              <span className="gradient-text">Concepts</span> into <br />
               Digital Reality.
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl leading-relaxed font-medium">
-              Firehouse Labs is an elite software development consultancy. We build mission-critical products for emergency services, government, private enterprise and health.
+              Firehouse Labs is an niche software development agency. We build mission-critical products for emergency services, government, private enterprise and health.
             </p>
 
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
